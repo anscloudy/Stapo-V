@@ -1,0 +1,15 @@
+# Ubah baris berikut di file .env hasil `composer create-project`
+APP_NAME="SARANA STAPOV"
+APP_LOCALE=id
+APP_FALLBACK_LOCALE=id
+APP_TIMEZONE=Asia/Jakarta     # (opsional) atau ubah di config/app.php: 'timezone' => 'Asia/Jakarta'
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=sarana_stapov
+DB_USERNAME=root
+DB_PASSWORD=
+
+SESSION_DRIVER=file
+FILESYSTEM_DISK=public

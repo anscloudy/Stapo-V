@@ -1,0 +1,38 @@
+UPDATE SARANA STAPOV (3 Nov 2026)
+=================================
+
+CARA MEMASANG
+1. Tutup `php artisan serve` kalau sedang jalan (Ctrl+C).
+2. Ekstrak zip ini LANGSUNG ke dalam folder project Anda (folder "sarana-stapov",
+   yang berisi app, config, database, public, resources, routes).
+   Pilih "Replace / Timpa" jika ditanya. Folder vendor, .env, dan database.sqlite
+   tidak ada di zip ini, jadi aman.
+3. Buka terminal di folder project, lalu jalankan berurutan:
+
+       php artisan migrate
+       php artisan db:seed
+       php artisan optimize:clear
+       php artisan serve
+
+   - migrate   : menggabungkan status lama "diproses" ke "diverifikasi".
+   - db:seed   : mengganti nama kelas (1/2 -> A/B/C, PPLG XI-XII -> RPL, tanpa memutus
+                 laporan lama), menambah 32 siswa XII RPL C, 1 admin, 1 guru.
+                 Aman dijalankan berulang.
+   - Ingin database bersih dari nol? Pakai `php artisan migrate:fresh --seed`
+     (SEMUA laporan lama akan terhapus).
+
+4. Muat ulang browser dengan Ctrl+F5.
+
+AKUN BARU
+- Admin : admincuy@gmail.com  (sandi sesuai yang Anda berikan)
+- Guru  : gurucuy@gmail.com   (sandi sesuai yang Anda berikan)
+- Siswa XII RPL C: login pakai NISN di kolom "NISN atau Email", sandi = NISN yang sama.
+
+GAMBAR
+Logo dan latar beranda dibaca langsung dari resources/image/logo_smk.png dan
+resources/image/home_background.jpg lewat route /gambar/{file}, jadi struktur folder
+Anda tidak perlu diubah. Untuk mengganti gambar cukup timpa dua file itu dengan nama sama.
+
+CATATAN KEAMANAN
+Akun demo lama (admin@smkn5solo.sch.id / admin12345, petugas@..., budi@...) masih ada.
+Hapus lewat menu Pengguna sebelum dipakai sungguhan.

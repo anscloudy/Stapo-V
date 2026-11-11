@@ -1,0 +1,1 @@
+<svg class="wave {{ $cls ?? '' }}" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0,48 C180,96 360,8 600,40 C840,72 1020,96 1200,56 C1320,30 1400,34 1440,44 L1440,90 L0,90 Z"/></svg>
